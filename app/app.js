@@ -9,7 +9,10 @@ app.use(cors()); //* le module cors permet d'autoriser ou non les demandes prove
 
 // Route principal pour tester le server
 app.get("/", (req, res) => {
-  res.json("Bienvenue sur mon serveur");
+  // res.json("Bienvenue sur mon serveur");
+    const userIp = req.ip;
+    // console.log(userIp);
+    res.send(userIp);
 });
 app.get("/api", (req, res) => {
   // res.json("Bienvenue api");

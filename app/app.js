@@ -12,7 +12,10 @@ app.get("/", (req, res) => {
   res.json("Bienvenue sur mon serveur");
 });
 app.get("/api", (req, res) => {
-  res.json("Bienvenue api");
+  // res.json("Bienvenue api");
+  const userIp = req.ip;
+  // console.log(userIp);
+  res.send(userIp);
 });
 // app.use("/api", require("../server/routes/User.Routes"));
 app.use("/api/auth", require("../server/routes/User.Routes"));

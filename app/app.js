@@ -17,7 +17,6 @@ app.get("/api", (req, res) => {
   // console.log(userIp);
   res.send(userIp);
 });
-// app.use("/api", require("../server/routes/User.Routes"));
 app.use("/api/auth", require("../server/routes/User.Routes"));
 app.use("/api/weeklyMenus", require("../server/routes/WeeklyMenus.Routes"));
 app.use("/api/patients", require("../server/routes/Patient.Routes"));

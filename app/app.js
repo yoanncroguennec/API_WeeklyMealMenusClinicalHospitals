@@ -4,6 +4,7 @@ const cors = require("cors");
 
 const app = express();
 app.use(bodyParser.json());
+app.set("trust proxy", true);
 // app.use(express.json());
 app.use(cors()); //* le module cors permet d'autoriser ou non les demandes provenant de l'extérieur.
 
@@ -21,6 +22,7 @@ app.get("/api", (req, res) => {
   res.send(userIp);
 });
 app.use("/api/auth", require("../server/routes/User.Routes"));
+app.use("/api/movies", require("../server/routes/Movies.Routes"));
 app.use("/api/weeklyMenus", require("../server/routes/WeeklyMenus.Routes"));
 app.use("/api/patients", require("../server/routes/Patient.Routes"));
 

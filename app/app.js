@@ -11,7 +11,9 @@ app.use(cors()); //* le module cors permet d'autoriser ou non les demandes prove
 app.get("/", (req, res) => {
   res.json("Bienvenue sur mon serveur");
 });
-
+app.get("/api", (req, res) => {
+  res.json("Bienvenue api");
+});
 // app.use("/api", require("../server/routes/User.Routes"));
 app.use("/api/auth", require("../server/routes/User.Routes"));
 app.use("/api/weeklyMenus", require("../server/routes/WeeklyMenus.Routes"));
